@@ -15,7 +15,7 @@ public class movieFormClass
     public string Category { get; set; }
     public int Year { get; set; }
     public string Director { get; set; }
-    public string Edit { get; set; }
+    public bool Edit { get; set; } = false;
     public string? Lent { get; set; }
     public string? Notes { get; set; }
     
