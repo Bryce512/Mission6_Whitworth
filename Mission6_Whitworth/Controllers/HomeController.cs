@@ -75,7 +75,8 @@ public class HomeController : Controller
     [HttpGet]
     public IActionResult Delete(int Id)
     {
-        Movie movieToDelete = _context.Movies.Single(x => x.movieId == Id);
+        Movie movieToDelete = _context.Movies
+            .Single(x => x.movieId == Id); //.single ensures it only finds 1 record
         
         return View("DeleteConfirmation", movieToDelete);
     }

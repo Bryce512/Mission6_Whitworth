@@ -9,7 +9,8 @@
 <h3>Are you sure you want to delete "@Model.Title"?</h3>
 <form method="post">
 
-    <input type="hidden" asp-for="movieId">
+    //allow form to hold movieId
+    <input type="hidden" asp-for="movieId"> 
     <button type="submit">Delete</button>
     <a class="btn btn-info" asp-controller="Home" asp-action="MovieList">Cancel</a>
 </form>
