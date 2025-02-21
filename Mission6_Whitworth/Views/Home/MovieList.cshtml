@@ -1,0 +1,42 @@
+@{
+}
+
+@model List<Movie>
+
+<table class="table table-bordered">
+    <thead class="fw-bold">
+    <tr>
+        <td>Title</td>
+        <td>Rating</td>
+        <td>Category ID</td>
+        <td>Director</td>
+        <td>Year</td>
+        <td>Edited</td>
+        <td>Lent To</td>
+        <td>Copied To Plex</td>
+        <td>Notes</td>
+    </tr>
+    
+    </thead>
+    
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.Title</td>
+                <td>@x.Rating</td>
+                <td>@x.CategoryId</td>
+                <td>@x.Director</td>
+                <td>@x.Year</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.CopiedToPlex</td>
+                <td>@x.Notes</td>
+                
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-movieId="@x.movieId">Edit</a></td>
+                <td><a  class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-Id="@x.movieId">Delete</a></td>
+            </tr>
+        </tbody>
+    }
+    
+</table>
